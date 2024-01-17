@@ -269,6 +269,7 @@ document.getElementById("eliminar_cat").addEventListener("click", async () => {
 
 			llenar_categorias();
 			//fksmdmfkdmf
+			// https://vscode.dev/profile/github/ff77f7880e7da1a6323fb408e459786d
 		}
 	});
 });
