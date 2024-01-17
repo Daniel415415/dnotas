@@ -1,0 +1,118 @@
+body{
+    background: #1A2980;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #26D0CE, #1A2980);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #26D0CE, #1A2980); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+#cuadrito{
+    position: absolute;
+    border-radius: 100%;
+    border: 1px solid yellow;
+   
+    width:15px;
+    height:15px;
+    background-color: rgb(255, 255, 255);
+    animation-name: transcubo;
+    
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+   
+    z-index: 3;
+}
+
+@keyframes transcubo {
+    0% {
+        transform: translateX(0);
+    }
+    10% {
+        transform: translate(10vh,0);
+        
+    }
+    20% {
+        transform: translate(10vh,100px);
+    }
+    30%{
+        transform: translate(20vh,100px);
+    }
+    40%{
+        transform: translate(20vh,0px);
+    }
+    50%{
+        transform: translate(30vh,0px);
+    }
+    60%{
+        transform: translate(30vh,100px);
+    }
+    70%{
+        transform: translate(40vh,100px);
+    }
+    80%{
+        transform: translate(40vh,0px);
+    }
+    100%{
+        transform: translate(50vh,0px);
+        background-color:transparent;
+        height: 30px;
+        width: 30px;
+
+    }
+}
+
+#cubito{
+    position: absolute;
+    border: 1px solid rgb(255, 255, 0);
+   
+    width:15px;
+    height:15px;
+    background-color: rgba(255, 255, 255, 0);
+    animation-name: transcubito;
+    
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+   
+    z-index: 3;
+}
+
+@keyframes transcubito {
+   
+    50%{
+       
+        background-color: yellow;
+        
+    }
+    100%{
+        transform:rotate(360deg) scale(2.5);
+        background-color: transparent;
+        
+    }
+}
+
+#titulon{
+    text-shadow: -7px 7px 7px black;
+    text-align: center;
+}
+
+#imagen_nota{
+animation: notim ;
+animation-duration: 2s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+animation-fill-mode: both;
+
+
+}
+
+@keyframes notim {
+    
+  20% {
+    transform: rotate(30deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+   
+    
+}
+
