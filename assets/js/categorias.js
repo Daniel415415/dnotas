@@ -268,6 +268,7 @@ document.getElementById("eliminar_cat").addEventListener("click", async () => {
 			});
 
 			llenar_categorias();
+			//fksmdmfkdmf
 		}
 	});
 });
