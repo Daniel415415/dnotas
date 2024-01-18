@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insertar Nota</title>
+</head>
+<body>
+
+  <button id="agregarNotaBtn">Agregar Nota de Prueba</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    // La función para insertar la nota
+    async function insertarNota(nuevaNota) {
+      try {
+        const respuesta = await axios.post(
+          'https://bdtest-5ff29-default-rtdb.firebaseio.com/nombre_de_tu_coleccion.json',
+          {
+            fields: {
+              id_nota: { stringValue: nuevaNota.id_nota },
+              fecha_nota: { timestampValue: nuevaNota.fecha_nota },
+              titulo_nota: { stringValue: nuevaNota.titulo_nota },
+              descripcion_nota: { stringValue: nuevaNota.descripcion_nota },
+              eliminada: { stringValue: nuevaNota.eliminada },
+              id_usuario: { stringValue: nuevaNota.id_usuario },
+              id_categoria: { stringValue: nuevaNota.id_categoria },
+            },
+          },
+          {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+
+        // Maneja la respuesta (puedes ajustar según tus necesidades)
+        console.log('Nota insertada con éxito:', respuesta.data);
+      } catch (error) {
+        console.error('Error al insertar la nota:', error);
+      }
+    }
+
+    // El botón que ejecuta la función al ser clicado
+    document.getElementById('agregarNotaBtn').addEventListener('click', function() {
+      const nuevaNota = {
+        id_nota: 'nota123',
+        fecha_nota: new Date().toISOString(),
+        titulo_nota: 'Título de la nota',
+        descripcion_nota: 'Descripción de la nota...',
+        eliminada: 'no',
+        id_usuario: 'usuario456',
+        id_categoria: 'categoria789',
+      };
+
+      insertarNota(nuevaNota);
+    });
+  </script>
+</body>
+</html>
